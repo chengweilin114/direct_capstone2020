@@ -98,7 +98,7 @@ dependencies:
   - sqlite
   - terminado
   - testpath
-  - tk=8.6.8
+  - tk
   - tornado
   - traitlets
   - urllib3
