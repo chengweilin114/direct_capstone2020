@@ -110,5 +110,5 @@ dependencies:
   - zeromq
   - zipp
   - zlib
-prefix: /Users/cheng-wei/opt/anaconda3/envs/direct
+
 
