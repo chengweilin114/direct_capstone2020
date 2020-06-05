@@ -4,7 +4,6 @@ channels:
   - plotly
   - defaults
 dependencies:
-  - appnope
   - asn1crypto
   - attrs
   - backcall
@@ -110,5 +109,3 @@ dependencies:
   - zeromq
   - zipp
   - zlib
-
-
