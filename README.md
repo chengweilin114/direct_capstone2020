@@ -51,9 +51,21 @@ The project has the following structure:
 
 ## Documentation
 
+`Hedging-Saving/data_functions.py`
+
+This module contain functions to retrieve and process data from the database folder. 
+With all these functions, we can predict our peak hour more accurate. 
 
 ## Installation
 
+Below are the steps to install this package:
+1. Clone this repo to the computer: `git clone https://github.com/chengweilin114/direct_capstone2020`
+
+2. In the repo directory install and the environment:
+```
+conda env create -f environment
+conda activate environment
+```
 
 ## Licensing
 
