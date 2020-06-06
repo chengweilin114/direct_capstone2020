@@ -1,6 +1,7 @@
 # Hedging-Saving
 
 [![Build Status](https://travis-ci.org/chengweilin114/direct_capstone2020.svg?branch=master)](https://travis-ci.org/github/chengweilin114/direct_capstone2020)
+[![Coverage Status](https://coveralls.io/repos/github/chengweilin114/direct_capstone2020/badge.svg?branch=master)](https://coveralls.io/github/chengweilin114/direct_capstone2020?branch=master)
 
 Introduction: Enel X has customers that participate in a special system peak program aimed at optimizing cost of energy in batteries. In this program, if Enel X storage or load is dispatched by our customers (ie, make their electricity load small) during the five highest hour long peaks in the year of the total grid, Enel X is rewarded at approximately $100/kW. The system peak program was designed by the local utility to lower peak electricity load on the grid. Thus, Our goal is working on a project that will help Enel X ‘s customers to fully utilize the battery capacity and optimize the electricity cost.
 
