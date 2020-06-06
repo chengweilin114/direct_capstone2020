@@ -1,5 +1,5 @@
 """ Test file for data_functions.py"""
-import data_functions
+from Hedging_Saving.data_functions import *
 import unittest
 import pandas as pd
 import matplotlib.pyplot as plt
