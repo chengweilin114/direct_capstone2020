@@ -9,6 +9,9 @@ matrix:
         - python: 3.6
         - python: 3.7
         - python: 3.8
+        - stage: Produce Coverage
+          node_js: node
+          script: npm run coveralls
 
 # what branches should be evaluated
 branches:
