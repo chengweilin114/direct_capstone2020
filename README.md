@@ -71,7 +71,7 @@ This module contain functions to retrieve and process data from the database fol
 With all these functions, we can predict our peak hour more accurate. 
 
 ```
-from Hedging-Saving import * 		             # import module
+from Hedging-Saving import * 		            # import module
 
 data_functions.Accuracy(master_df,forecast_df) 	    # input two csv files and generate a new dataframe with "performance" and "hit rate" in each season.
 ```
