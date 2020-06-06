@@ -16,6 +16,7 @@ def test_pre_master_dataset():
         raise Exception()
     except ValueError:
         pass
+    
   
 def test_ pre_forecast_dataset():
     """ Check for csv file"""
@@ -25,6 +26,7 @@ def test_ pre_forecast_dataset():
         raise Exception()
     except ValueError:
         pass
+    
         
 def test_merge_forecast_top_priority():
     """ Check for two merge csv file"""
@@ -35,5 +37,25 @@ def test_merge_forecast_top_priority():
         raise Exception()
     except ValueError:
         pass
-
-      
+    
+    
+def test_extract_topN_forecast():
+    """ Check for int probability"""
+    ts = '2019-07-19 12:00:00'
+    n = 12
+    try:
+        data_functions.extract_topN_forecast(ts, n)
+        raise Exception()
+    except ValueError:
+        pass
+    
+    
+def test_Accuracy():
+    """ Check for new df"""
+    master_df = pd.read_csv('small_master_dataset.csv')
+    forecast_df = pd.read_csv('small_forecasts_top_12.csv')
+    try:
+        data_functions.Accuracy(master_df, forecast_df)
+        raise Exception()
+    except ValueError:
+        pass
