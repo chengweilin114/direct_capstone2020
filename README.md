@@ -21,6 +21,13 @@ Introduction: Enel X has customers that participate in a special system peak pro
 The project has the following structure:
 
     direct_capstone2020/
+      |- Hedging-Saving/
+        |- data_functions.py
+        |- tests/
+            |- samples
+                |- small_forecast.csv
+                |- small_master.csv
+            |- test_data_functions.py
       |- codes/
         |- Summarize_functions.ipynb
         |- dataset.ipynb
@@ -35,10 +42,16 @@ The project has the following structure:
         |- Gantt Chart.png
         |- Project_proposal.pdf
         |- use_cases
-      |- README.md
-      |- environment.yml
+      |- examples/
+        |- tutorial.ipynb
       |- .gitignore
+      |- .travis.yml
       |- LICENSE
+      |- README.md
+      |- environment.yml     
+
+
+The main script is `Hedging-Saving/data_functions.py`. This file provides function that do the pre-processing from csv fils into dataframe. For a more specific overview of the project, please see `examples/tutorial.ipynb`.
 
 
 ## Software Dependencies
@@ -56,6 +69,16 @@ The project has the following structure:
 
 This module contain functions to retrieve and process data from the database folder. 
 With all these functions, we can predict our peak hour more accurate. 
+
+```
+from Hedging-Saving import * 		            # import module
+
+data_functions.Accuracy(master_df,forecast_df) 	# input two csv files and generate a new dataframe with "performance" and "hit rate" in each season.
+```
+
+Output:
+
+![](images/top3_performance.png)
 
 ## Installation
 
