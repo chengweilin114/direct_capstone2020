@@ -20,7 +20,7 @@ def test_pre_master_dataset():
         pass
 
 
-def test_ pre_forecast_dataset():
+def test_pre_forecast_dataset():
     """ Check for csv file"""
     forecast_df = pd.read_csv('/samples/small_forecast.csv')
     try:
