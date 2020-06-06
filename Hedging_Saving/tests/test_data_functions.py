@@ -14,7 +14,7 @@ def test_pre_master_dataset():
     master_df = pd.read_csv('/samples/small_master.csv')
 
     try:
-        data_functions.pre_master_dataset(master_df)
+        data_function.pre_master_dataset(master_df)
         raise Exception()
     except ValueError:
         pass
@@ -24,7 +24,7 @@ def test_pre_forecast_dataset():
     """ Check for csv file"""
     forecast_df = pd.read_csv('/samples/small_forecast.csv')
     try:
-        data_functions.pre_forecast_dataset(forecast_df)
+        data_function.pre_forecast_dataset(forecast_df)
         raise Exception()
     except ValueError:
         pass
@@ -35,7 +35,7 @@ def test_merge_forecast_top_priority():
     master_df = pd.read_csv('/samples/small_master.csv')
     forecast_df = pd.read_csv('/samples/small_forecast.csv')
     try:
-        data_functions.merge_forecast_top_priority(master_df, forecast_df)
+        data_function.merge_forecast_top_priority(master_df, forecast_df)
         raise Exception()
     except ValueError:
         pass
@@ -46,7 +46,7 @@ def test_extract_topN_forecast():
     ts = '2019-07-19 12:00:00'
     n = 12
     try:
-        data_functions.extract_topN_forecast(ts, n)
+        data_function.extract_topN_forecast(ts, n)
         raise Exception()
     except ValueError:
         pass
@@ -57,7 +57,7 @@ def test_Accuracy():
     master_df = pd.read_csv('/samples/small_master.csv')
     forecast_df = pd.read_csv('/samples/small_forecast.csv')
     try:
-        data_functions.Accuracy(master_df, forecast_df)
+        data_function.Accuracy(master_df, forecast_df)
         raise Exception()
     except ValueError:
         pass
