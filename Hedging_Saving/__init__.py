@@ -1,3 +1,3 @@
 __version__ = "1.0"
 
-import data_functions
+from data_functions import *
