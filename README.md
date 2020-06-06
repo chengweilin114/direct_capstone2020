@@ -1,7 +1,7 @@
 # Hedging-Saving
 
 
-<img align="right"  src="https://github.com/chengweilin114/direct_capstone2020/images/battery-icons.jpg">
+<img align="right"  src="https://github.com/chengweilin114/direct_capstone2020/blob/master/images/battery-icons.jpg">
 
 [![Build Status](https://travis-ci.org/chengweilin114/direct_capstone2020.svg?branch=master)](https://travis-ci.org/github/chengweilin114/direct_capstone2020)
 [![Coverage Status](https://coveralls.io/repos/github/chengweilin114/direct_capstone2020/badge.svg?branch=master)](https://coveralls.io/github/chengweilin114/direct_capstone2020?branch=master)
