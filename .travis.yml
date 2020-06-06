@@ -42,7 +42,7 @@ before_script:
 
 # the actual commands to run
 script:
-    - coverage run test_data_functions.py
+    #- coverage run test_data_functions.py
     - coverage run -m unittest discover
  
 # generate a coverage report to send to back to user
