@@ -1,5 +1,5 @@
 """ Test file for data_functions.py"""
-from data_function import *
+from Hedging_Saving import data_function
 import pandas as pd
 import math
 
