@@ -220,8 +220,8 @@ def test_Accuracy():
 
 
 def main():
-    master_df = pd.read_csv('samples/small_master.csv')
-    forecast_df = pd.read_csv('samples/small_forecast.csv')
+    master_df = pd.read_csv('./samples/small_master.csv')
+    forecast_df = pd.read_csv('./samples/small_forecast.csv')
     test_pre_master_dataset()
     test_pre_forecast_dataset()
     test_merge_forecast_top_priority()
