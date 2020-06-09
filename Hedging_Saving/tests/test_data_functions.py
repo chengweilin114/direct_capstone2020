@@ -45,15 +45,15 @@ def assert_equals(expected, received):
 
 
 def test_pre_master_dataset():
-    assert_equals('2016-05-01 20:00:00', str(pre_master_dataset(test_master)['ts'].iloc[0]))
-    assert_equals('2016-05-02 21:00:00', str(pre_master_dataset(test_master)['ts'].iloc[1]))
-    assert_equals('2016-05-03 20:00:00', str(pre_master_dataset(test_master)['ts'].iloc[2]))
+    assert_equals('2016-05-01 20:00:00', str(pre_master_dataset(master_df)['ts'].iloc[0]))
+    assert_equals('2016-05-02 21:00:00', str(pre_master_dataset(master_df)['ts'].iloc[1]))
+    assert_equals('2016-05-03 20:00:00', str(pre_master_dataset(master_df)['ts'].iloc[2]))
 
 
 def test_pre_forecast_dataset():
-    assert_equals(0.0025, (pre_forecast_dataset(test_forecast)['forecast'].iloc[0]))
-    assert_equals(0, (pre_forecast_dataset(test_forecast)['forecast'].iloc[1]))
-    assert_equals(0.005, (pre_forecast_dataset(test_forecast)['forecast'].iloc[2]))
+    assert_equals(0.0025, (pre_forecast_dataset(forecast_df)['forecast'].iloc[0]))
+    assert_equals(0, (pre_forecast_dataset(forecast_df)['forecast'].iloc[1]))
+    assert_equals(0.005, (pre_forecast_dataset(forecast_df)['forecast'].iloc[2]))
 
 
 def test_extract_topN_forecast():
@@ -63,20 +63,20 @@ def test_extract_topN_forecast():
 
 
 def test_merge_forecast_top_priority():
-    assert_equals(21, (merge_forecast_top_priority(test_master,test_forecast)['hour_ending_eastern'].iloc[0]))
-    assert_equals(20, (merge_forecast_top_priority(test_master,test_forecast)['hour_ending_eastern'].iloc[1]))
-    assert_equals(21, (merge_forecast_top_priority(test_master,test_forecast)['hour_ending_eastern'].iloc[2]))
+    assert_equals(21, (merge_forecast_top_priority(master_df,forecast_df)['hour_ending_eastern'].iloc[0]))
+    assert_equals(20, (merge_forecast_top_priority(master_df,forecast_df)['hour_ending_eastern'].iloc[1]))
+    assert_equals(21, (merge_forecast_top_priority(master_df,forecast_df)['hour_ending_eastern'].iloc[2]))
 
 
 def test_Accuracy():
-    assert_equals(100,(Accuracy(test_master,test_forecast)['percentage'].iloc[0]))
-    assert_equals(81,(Accuracy(test_master,test_forecast)['percentage'].iloc[1]))
-    assert_equals(78,(Accuracy(test_master,test_forecast)['percentage'].iloc[2]))
+    assert_equals(100,(Accuracy(master_df,forecast_df)['percentage'].iloc[0]))
+    assert_equals(81,(Accuracy(master_df,forecast_df)['percentage'].iloc[1]))
+    assert_equals(78,(Accuracy(master_df,forecast_df)['percentage'].iloc[2]))
 
 
 def main():
-    test_master = pd.read_csv('samples/small_master.csv')
-    test_forecast = pd.read_csv('samples/small_forecast.csv')
+    master_df = pd.read_csv('samples/small_master.csv')
+    forecast_df = pd.read_csv('samples/small_forecast.csv')
     test_pre_master_dataset()
     test_pre_forecast_dataset()
     test_merge_forecast_top_priority()
