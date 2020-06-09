@@ -40,8 +40,8 @@ before_script:
 
 # the actual commands to run
 script:
-    #- pytest --cov=Hedging_Saving/
-    - coverage run -m unittest 
+    - pytest --cov=Hedging_Saving/__init__.py
+    #- coverage run -m unittest 
  
 # generate a coverage report to send to back to user
 after_success:
