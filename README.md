@@ -158,16 +158,20 @@ report_df = get_report(actual_load, forecasts, n_probs_to_use)
 ## Spread battery capacity over different number of hours
 ### Step 1
 We choose the top n peaks (n days) in each season, and choose the hours with the largest k forecasted probabilities on each of these days.
+
 ### Step 2
 We adjust the chosen probabilities to have them sum up to one for each day.
+
 ### Step 3
 We discharge the battery in proportional to the adjusted probabilities. Since the capacity of the battery is 2-hours, the maximum amount that can be discharged is 0.5. If the probability is p%, we discharge p% of 0.5 capacity. Then the discharged energy is p% of 0.5.
 
 If one of the probabilitis on some day is larger than 0.5, i.e., p > 0.5, we only discharge 50% of 0.5 capacity, and spread out the remaining capacity in the rest hours evenly. 
 
 For example, if we use the 3 largest probabilities on each day, and the probabilities are 0.6, 0.1, 0.3, then we discharge 0.5/0.5=100%, 0.25/0.5=50%, 0.25/0.5=50% at each hour, repectively.
+
 ### Step 4
 We eavaluate the performance of this strategy by using the ratio of the total energy we successfully discharge and the total number of peaks we use. The more closer this ratio is to 100%, the better performance we have.
+
 ### Example of top_n_results
 ![](images/image-top-n-results.png)
 
@@ -183,6 +187,7 @@ Table "season_results" shows the ground-truth **top 5 peaks** in the **season 20
 
 ### Example of top-n-adjusted
 ![](images/image-top-n-adjusted.png)
+
 Table "season_adjusted" shows the **3 largest** forecasted probabilities on each day of the **top 5 peaks** in the **season 2017-2018**. 
 
 -   **prob_rankings_per_day**: rankings of forecasted probabilities in a day
@@ -195,7 +200,17 @@ The three peaks at **17:00:00** in the **season 2017-2018** all appear in the ta
 
 The two peaks at **18:00:00** in the **season 2017-2018** both appear in the table "season_adjusted", so both are hitted, the hit rate is **2/2** for **"season: 2017-2018, hour: 18, top_n_peaks: 5"**.
 
-The total hit rate for **"season: 2017-2018, top_n_peaks: 5"** is 5/5(100%). 
+The total hit rate for **"season: 2017-2018, top_n_peaks: 5"** is **5/5(100%)**. 
+
+### Example of Report
+![](images/image-report.png)
+
+Table "Report" shows the report for**"season: 2017-2018, top_n_peaks_peaks: 5"**.
+
+-   **HitRate(%)**: x/y(p%) means we discharge the battery successfully for x out of y peak hours. p% = x/y*100 %.
+-   **17**: x/y(p%) means we discharge the battery successfully for x out of y peak hours which appears at 17:00:00 and the average discharged energy for each of these x peak hours is p%.
+-   **18**: x/y(p%) means we discharge the battery successfully for x out of y peak hours which appears at 18:00:00 and the average discharged energy for each of these $x$ peak hours is p%.
+-   **Performance(%)**: displays the ratio of the total energy we successfully discharge and the total number of peaks we use, i.e., (91% * 3 + 72% * 2)/5=83.4%. Since the number of peaks we use (i.e., 5) is fixed, to make the performance 100%, we need to successfully discharge 100% for each of these 5 peaks. Therefore, the more closer to 100%, the better performance. 
 
 ## Installation
 
