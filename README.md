@@ -212,6 +212,10 @@ Table "Report" shows the report for**"season: 2017-2018, top_n_peaks_peaks: 5"**
 -   **18**: x/y(p%) means we discharge the battery successfully for x out of y peak hours which appears at 18:00:00 and the average discharged energy for each of these $x$ peak hours is p%.
 -   **Performance(%)**: displays the ratio of the total energy we successfully discharge and the total number of peaks we use, i.e., (91% * 3 + 72% * 2)/5=83.4%. Since the number of peaks we use (i.e., 5) is fixed, to make the performance 100%, we need to successfully discharge 100% for each of these 5 peaks. Therefore, the more closer to 100%, the better performance. 
 
+### Overall performance
+![](images/overall_performance.png)
+
+
 ## Installation
 
 Below are the steps to install this package:
