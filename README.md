@@ -175,7 +175,7 @@ We eavaluate the performance of this strategy by using the ratio of the total en
 ### Example of top_n_results
 ![](images/image-top-n-results.png)
 
-Table "season_results" shows the ground-truth **top 5 peaks** in the **season 2017-2018**, with **3 peaks at 17:00:00** and **2 peaks at 18:00:00**.
+This is part of the top_n_results dataframe for **top 5 peaks** in the **season 2017-2018**, with **3 peaks at 17:00:00** and **2 peaks at 18:00:00**.
 
 -   **demand_MW**: demand in Megawatts for each hour
 -   **adjusted_demand_MW**: demand after adjusting in Megawatts for each hour
@@ -188,7 +188,7 @@ Table "season_results" shows the ground-truth **top 5 peaks** in the **season 20
 ### Example of top-n-adjusted
 ![](images/image-top-n-adjusted.png)
 
-Table "season_adjusted" shows the **3 largest** forecasted probabilities on each day of the **top 5 peaks** in the **season 2017-2018**. 
+This is part of the top_n_adjusted dataframe for for **"season: 2017-2018, top_n_peaks: 5, top_n_probs: 3"**.
 
 -   **prob_rankings_per_day**: rankings of forecasted probabilities in a day
 -   **is_true_peak**: if this hour is the ground-truth peak
@@ -205,7 +205,7 @@ The total hit rate for **"season: 2017-2018, top_n_peaks: 5"** is **5/5(100%)**.
 ### Example of Report
 ![](images/image-report.png)
 
-Table "Report" shows the report for**"season: 2017-2018, top_n_peaks_peaks: 5"**.
+This is part of the overall report for **"season: 2017-2018, top_n_peaks: 5, top_n_probs: 3"**. The complete reports for different seasons, top_n_peaks and top_n_probs can be found in `results` folder.
 
 -   **HitRate(%)**: x/y(p%) means we discharge the battery successfully for x out of y peak hours. p% = x/y*100 %.
 -   **17**: x/y(p%) means we discharge the battery successfully for x out of y peak hours which appears at 17:00:00 and the average discharged energy for each of these x peak hours is p%.
