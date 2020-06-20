@@ -97,6 +97,12 @@ Output:
 ![](images/top3_performance.png)
 
 ### Use all the data from [link](https://drive.google.com/drive/folders/1ifAAAHJH6qRNGLICNbKe5Nt7yFHf-pTQ?usp=sharing)
+direct_capstone2020/
+      |- codes/
+        |- dataloader.py - Load the actual demand data and forecasts.
+        |- summarize.py - Generate a table to show accuracy of forecasting. 
+        |- adjust_probs.py - Choose number of top forecasts to use and adjust to sum up to one.
+        |- evaluate.py - Evaluate different discharging strategies.
 
 
 ## Installation
