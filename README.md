@@ -8,7 +8,7 @@
 [![HitCount](http://hits.dwyl.com/chengwei0114/direct_capstone2020.svg)](http://hits.dwyl.com/chengwei0114/direct_capstone2020)
 
 
-Enel X has customers to participate in a special system peak program. By using backup batteries for discharge in peak hours, on one hand, this program is aimed to minimize electricity bills for customers; on the other hand, Enel X can be rewarded at approximately $100/kW for each unit of load reduced duringthe five highest hour long peaks in the year of the total grid. The system peak program was designed by the local utility to lower peak electricity load on the grid. Our goal is to help Enel X ‘s customers find the best battery discharging strategy in order to fully utilize the battery capacity and minimize the electricity cost.
+Enel X has customers to participate in a special system peak program. By using backup batteries for energy discharge in peak hours, on one hand, this program is aimed to minimize electricity bills for customers; on the other hand, Enel X can be rewarded at approximately $100/kW for each unit of load reduced duringthe five highest hour long peaks in the year of the total grid. The system peak program was designed by the local utility to lower peak electricity load on the grid. Our goal is to help Enel X ‘s customers find the best battery discharging strategy in order to fully utilize the battery capacity and minimize the electricity cost.
 
 ## Table of Contents
 
