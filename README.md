@@ -13,7 +13,7 @@ Introduction: Enel X has customers that participate in a special system peak pro
 ## Table of Contents
 
 
-- [Project Organization](#Project Organization)
+- [Project Organization](#Project-Organization)
 - [Software Dependencies](#Software-Dependencies)
 - [Installation](#Installation)
 - [Datasets](#Datasets)
