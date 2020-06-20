@@ -104,6 +104,23 @@ Output:
             |- summarize.py - Generate a table to show accuracy of forecasting. 
             |- adjust_probs.py - Choose number of top forecasts to use and adjust to sum up to one.
             |- evaluate.py - Evaluate different discharging strategies.
+            
+#### Summarize forecasting accuracies
+```
+get_actual_peaks(load_df)
+```
+* Argument 
+    * load_df: the downloaded actual demand data
+* Output: the dataframe with all peaks
+
+```
+summarize_top_n(peaks_df, forecasts, n_peaks_to_use)
+```
+* Augument
+    * peaks_df: the peaks generated from `get_actual_peaks` function
+    * forecasts: the downloaded forecasting results
+    * n_peaks_to_use: user-specified number of top peaks in a season to discharge, for example, n_peaks_to_use=3 means discharging the battery in top 3 peaks in a season.
+
 
 
 ## Installation
