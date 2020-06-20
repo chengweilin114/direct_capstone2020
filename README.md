@@ -169,6 +169,8 @@ For example, if we use the 3 largest probabilities on each day, and the probabil
 ### Step 4
 We eavaluate the performance of this strategy by using the ratio of the total energy we successfully discharge and the total number of peaks we use. The more closer this ratio is to 100%, the better performance we have.
 ### Example of top_n_results
+![](images/image-top-n-results.png)
+
 Table "season_results" shows the ground-truth **top 5 peaks** in the **season 2017-2018**, with **3 peaks at 17:00:00** and **2 peaks at 18:00:00**.
 
 -   **demand_MW**: demand in Megawatts for each hour
