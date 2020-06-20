@@ -155,6 +155,17 @@ report_df = get_report(actual_load, forecasts, n_probs_to_use)
 * Output
     * report_df: report on performance of different discharging strategies.
 
+## Spread battery capacity over different number of hours
+### Step 1
+We choose the top $n$ peaks ($n$ days) in each season, and choose the hours with the largest $k$ forecasted probabilities on each of these days.
+### Step 2
+We adjust the chosen probabilities to have them sum up to one for each day.
+### Step 3
+We discharge the battery in proportional to the adjusted probabilities. Since the capacity of the battery is $2-$hours, the maximum amount that can be discharged is $0.5$. If the probability is $p\%$, we discharge $p\%$ of $0.5$ capacity. Then the discharged energy is $p\%$ of $0.5$.
+
+If one of the probabilitis on some day is larger than $0.5$, i.e., $p > 0.5$, we only discharge $50\%$ of $0.5$ capacity, and spread out the remaining capacity in the rest hours evenly. 
+
+For example, if we use the $3$ largest probabilities on each day, and the probabilities are $0.6, 0.1, 0.3$, then we discharge $0.5/0.5=100\%$, $0.25/0.5=50\%$, $0.25/0.5=50\%$ at each hour, repectively.
 
 ## Installation
 
