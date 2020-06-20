@@ -6,7 +6,7 @@ import pandas as pd
 import datetime
 
 
-def pre_master_dataset(master_df):
+def pre_master_data(master_df):
     """
     Get all dataset from the database and combine them to one dataframe.
     (data pre-processing)
@@ -27,7 +27,7 @@ def pre_master_dataset(master_df):
     return df
 
 
-def pre_forecast_dataset(forecast_df):
+def pre_forecast_data(forecast_df):
     """
     Get all dataset from the database and combine them to one dataframe.
     (data pre-processing)
@@ -57,24 +57,25 @@ def merge_forecast_top_priority(master_df, forecast_df):
     :type forecast_df: csv file
     :return a new dataframe
     """
-    dff = pre_master_dataset(master_df)
-    dff2 = pre_forecast_dataset(forecast_df)
+    dff = pre_master_data(master_df)
+    dff2 = pre_forecast_data(forecast_df)
     df_merge = dff.merge(dff2, on='ts')
     df_merge['predict'] = (df_merge.forecast > 0).astype(int)
     return df_merge
 
 
-def extract_topN_forecast(ts, n, df):
+def top_forecast(ts, n, forecast_df):
     """
     Select topN highest probabilities from pre_forecast_dataset file.
     Also, generate their discharge percentages.
     :param ts: time
     :param n: numbers
+    :param forecast_df: filename
     :type ts: datetime
     :type n: int
     :return probability
     """
-    df3 = df.copy()
+    df3 = forecast_df.copy()
     df3['ts'] = pd.to_datetime(df3['ts'])
     df3['ts_future'] = pd.to_datetime(df3['ts_future'])
     cols_to_keep = ['ts', 'ts_future', 'forecast']
@@ -123,7 +124,7 @@ def accuracy(master_df, forecast_df):
             dff_uni = pd.unique(df['hour_ending_eastern'])
             count = 0
             for k, v in test.items():
-                if v == True:
+                if v is True:
                     count += 1
             row = {
                 'season': i[0],
@@ -138,17 +139,17 @@ def accuracy(master_df, forecast_df):
                 ct = 0
                 for z in df_peak_hr['ts']:
                     ct += 1
-                    sum += extract_topN_forecast(z, 3)
+                    sum += top_forecast(z, 3, forecast_df)
                 ave = 0
                 if ct != 0:
                     ave = int(sum / ct)
                 performance += int(ave * df_peak_hr.predict.sum())
                 if ave == 0:
-                    row[peak_hr] =f'{0}/{df_peak_hr.predict.count()},{ave}'
+                    row[peak_hr] = f'{0}/{df_peak_hr.predict.count()},{ave}'
                     row['success'] = row['success'] - df_peak_hr.predict.count()
-                    row['Hit rate'] = row['success'] / j  
+                    row['Hit rate'] = row['success'] / j
                 else:
-                    row[peak_hr] = f'{df_peak_hr.predict.sum()}/{df_peak_hr.predict.count()},{ave}'        
+                    row[peak_hr] = f'{df_peak_hr.predict.sum()}/{df_peak_hr.predict.count()},{ave}'
             row['performance'] = performance/j
             new.append(row)
         final_df = pd.DataFrame(new)
@@ -158,8 +159,8 @@ def accuracy(master_df, forecast_df):
 def main():
     master_df = pd.read_csv('/database/small_master.csv')
     forecast_df = pd.read_csv('/database/small_forecast.csv')
-    pre_master_dataset(master_df)
-    pre_forecast_dataset(forecast_df)
+    pre_master_data(master_df)
+    pre_forecast_data(forecast_df)
     merge_forecast_top_priority(master_df, forecast_df)
     accuracy(master_df, forecast_df)
 
