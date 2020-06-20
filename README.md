@@ -95,7 +95,7 @@ data_functions.Accuracy(master_df,forecast_df) 	    # input two csv files and ge
 
 Output:
 
-![](images/top3_performance.png)
+![](images/image-report-3-probs.png)
 
 ### Use all the data from [link](https://drive.google.com/drive/folders/1ifAAAHJH6qRNGLICNbKe5Nt7yFHf-pTQ?usp=sharing)
     direct_capstone2020/
@@ -214,6 +214,8 @@ This is part of the overall report for **"season: 2017-2018, top_n_peaks: 5, top
 
 ### Overall performance
 ![](images/overall_performance.png)
+
+The x-axis represents different choices of n_probs_to_use. When n_probs_to_use=1, we only discharge the battery in the hour with the highest probabilitiy. This is the conventional discharging strategy and is provided as the benchmark for us to compare against.
 
 
 ## Installation
