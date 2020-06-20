@@ -73,7 +73,7 @@ The project has the following structure:
 
 
 ## Datasets
-In this project, we mainly use three datasets, the actual demand data in the last four years, the top 2 forecasts of peaks on each day, and the top 12 forecasts of peaks on each day. The shared link to the datasets is [link](https://drive.google.com/drive/folders/1ifAAAHJH6qRNGLICNbKe5Nt7yFHf-pTQ?usp=sharing)
+In this project, we use three datasets, the actual demand data in the last four years, i.e., `ieso_ga_master_dataset_allWeather_updated2020.csv`, the top 2 forecasts of peaks on each day, i.e., `ga_forecasts_top_2.cvs`, and the top 12 forecasts of peaks on each day, i.e., `ga_forecasts_top_12`. The shared link to the datasets is [link](https://drive.google.com/drive/folders/1ifAAAHJH6qRNGLICNbKe5Nt7yFHf-pTQ?usp=sharing).
 
 
 
