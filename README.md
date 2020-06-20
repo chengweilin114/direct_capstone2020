@@ -181,6 +181,22 @@ Table "season_results" shows the ground-truth **top 5 peaks** in the **season 20
 -   **rankings_per_season**: rankings of adjusted demand in a season
 -   **forecast**: forecasted probability of being the peak hour on that day
 
+### Example of top-n-adjusted
+![](images/image-top-n-adjusted.png)
+Table "season_adjusted" shows the **3 largest** forecasted probabilities on each day of the **top 5 peaks** in the **season 2017-2018**. 
+
+-   **prob_rankings_per_day**: rankings of forecasted probabilities in a day
+-   **is_true_peak**: if this hour is the ground-truth peak
+-   **adjusted_prob**: adjusted probabilities in the selected top $k$ probabilities (here, k = 3)
+-   **discharge_rate**: energy discharged in proportional to adjusted probabilities, i.e., probability/0.5
+-   **top_n_peaks**: number of top peaks to use
+
+The three peaks at **17:00:00** in the **season 2017-2018** all appear in the table "season_adjusted", so all three are hitted, the hit rate is **3/3** for **"season: 2018-2018, hour: 17, top_n_peaks: 5"**.
+
+The two peaks at **18:00:00** in the **season 2017-2018** both appear in the table "season_adjusted", so both are hitted, the hit rate is **2/2** for **"season: 2017-2018, hour: 18, top_n_peaks: 5"**.
+
+The total hit rate for **"season: 2017-2018, top_n_peaks: 5"** is 5/5(100%). 
+
 ## Installation
 
 Below are the steps to install this package:
