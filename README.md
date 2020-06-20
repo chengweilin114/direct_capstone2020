@@ -80,8 +80,9 @@ In the `database` folder, users can find a sample of actual demand data and the 
 
 ## Function Specifications
 ### Use the sample data from `database` folder
-
-`Hedging-Saving/data_functions.py`
+    direct_capstone2020/
+      |- codes/
+        |- data_functions.py
 
 This module contain functions to retrieve and process data from the `database` folder. 
 With all these functions, we can predict our peak hour more accurate. 
