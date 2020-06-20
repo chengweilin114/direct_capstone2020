@@ -107,23 +107,53 @@ Output:
             
 #### Summarize forecasting accuracies
 ```
-get_actual_peaks(load_df)
+peaks_df = get_actual_peaks(actual_load)
 ```
 * Arguments
-    * load_df: the downloaded actual demand data
+    * actual_load: downloaded actual demand data.
 * Output
-    * the dataframe with all peaks
+    * A dataframe with all peaks.
 
 ```
-summarize_top_n(peaks_df, forecasts, n_peaks_to_use)
+top_n_results, _ = summarize_top_n(peaks_df, forecasts, n_peaks_to_use)
 ```
-* Auguments
-    * peaks_df: the peaks generated from `get_actual_peaks` function
-    * forecasts: the downloaded forecasting results
+* Arguments
+    * peaks_df: peaks generated from `get_actual_peaks` function.
+    * forecasts: downloaded forecasting results.
     * n_peaks_to_use: user-specified number of top peaks in a season to discharge, for example, n_peaks_to_use=3 means discharging the battery in top 3 peaks in a season.
 * Output
-    * img
+    * top_n_results: summarized forecasting accuracies.
+    
+#### Discharge in proportional to probabilities
+```
+top_n_forecasts = get_top_n_forecasts(forecasts, n_probs_to_use)
+```
+* Arguments
+    * forecasts: downloaded forecasting results.
+    * n_probs_to_use: user-specified number of top forecasting probabilities to use on each peak day, for example, n_probs_to_use=3 means looking at the 3 largest forecasting probabilities on each peak day and discharge within those hours
+* Output
+    * Selected top n_probs_to_use forecasts.
 
+```
+top_n_adjusted = adjust_probs(top_n_results, top_n_forecasts, n_peaks_to_use, n_probs_to_use)
+```
+* Arguments
+    * top_n_results: summarized forecasting accuracies generated from 'summarize_top_n' function.
+    * top_n_forecasts: selected top n_probs_to_use forecasts.
+    * n_peaks_to_use: user-specified number of top peaks in a season to discharge.
+    * n_probs_to_use: user-specified number of top forecasting probabilities to use on each peak day.
+* Output
+    * top_n_adjusted: adjusted forecasting probabilities and discharging rate in proportional to probabilities.
+
+```
+report_df = get_report(actual_load, forecasts, n_probs_to_use)
+```
+* Arguments
+    * actual_load:
+    * forecasts: downloaded forecasting results.
+    * n_probs_to_use: user-specified number of top forecasting probabilities to use on each peak day.
+* Output
+    * report_df: report on performance of different discharging strategies.
 
 
 ## Installation
