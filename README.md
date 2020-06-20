@@ -215,8 +215,11 @@ This is part of the overall report for **"season: 2017-2018, top_n_peaks: 5, top
 ### Overall performance
 ![](images/overall_performance.png)
 
-The x-axis represents different choices of n_probs_to_use. When n_probs_to_use=1, we only discharge the battery in the hour with the highest probabilitiy. This is the conventional discharging strategy and is provided as the benchmark for us to compare against.
+This figures shows the performance changes as we increase n_probs_to_use for different choices of n_peaks_to_use.
 
+* When n_probs_to_use=1, we only discharge the battery in the hour with the highest probabilitiy. This is the conventional discharging strategy and is provided as the benchmark for us to compare against.
+* When n_probs_to_use=2, we obtain the best performance for all values of n_peaks_to_use. 
+* As we continue increasing n_probs_to_use, we spread the battery capacity over more hours and the energy discharged in each hour can decrease. This explains why the performance degrades as we increase n_probs_to_use. However, for n_peaks_to_use>1, no matther how large n_probs_to_use is, discharging in proportional to probabilities always outperforms the benchmark strategy.
 
 ## Installation
 
