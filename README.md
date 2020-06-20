@@ -26,13 +26,6 @@ Introduction: Enel X has customers that participate in a special system peak pro
 The project has the following structure:
 
     direct_capstone2020/
-      |- Hedging-Saving/
-        |- data_functions.py
-        |- tests/
-            |- samples
-                |- small_forecast.csv
-                |- small_master.csv
-            |- test_data_functions.py
       |- codes/
         |- adjust_probs.py
         |- data_functions.py
