@@ -8,7 +8,7 @@
 [![HitCount](http://hits.dwyl.com/chengwei0114/direct_capstone2020.svg)](http://hits.dwyl.com/chengwei0114/direct_capstone2020)
 
 
-Introduction: Enel X has customers that participate in a special system peak program aimed at optimizing cost of energy in batteries. In this program, if Enel X storage or load is dispatched by our customers (ie, make their electricity load small) during the five highest hour long peaks in the year of the total grid, Enel X is rewarded at approximately $100/kW. The system peak program was designed by the local utility to lower peak electricity load on the grid. Thus, Our goal is working on a project that will help Enel X ‘s customers to fully utilize the battery capacity and optimize the electricity cost.
+Enel X has customers to participate in a special system peak program. By using backup batteries for discharge in peak hours, on one hand, this program is aimed to minimize electricity bills for customers; on the other hand, Enel X can be rewarded at approximately $100/kW for each unit of load reduced duringthe five highest hour long peaks in the year of the total grid. The system peak program was designed by the local utility to lower peak electricity load on the grid. Our goal is to help Enel X ‘s customers find the best battery discharging strategy in order to fully utilize the battery capacity and minimize the electricity cost.
 
 ## Table of Contents
 
@@ -110,7 +110,7 @@ Output:
 
 ![](images/image-report-3-probs.png)
 
-### Use all the data from [link](https://drive.google.com/drive/folders/1ifAAAHJH6qRNGLICNbKe5Nt7yFHf-pTQ?usp=sharing)
+### Use complete datasets from [link](https://drive.google.com/drive/folders/1ifAAAHJH6qRNGLICNbKe5Nt7yFHf-pTQ?usp=sharing)
     direct_capstone2020/
           |- codes/
             |- dataloader.py - Load the actual demand data and forecasts.
