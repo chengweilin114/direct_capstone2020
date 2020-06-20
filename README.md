@@ -13,17 +13,16 @@ Introduction: Enel X has customers that participate in a special system peak pro
 ## Table of Contents
 
 
-- [Organization of the project](#Organization-of-the-project)
+- [Project Organization](#Project Organization)
 - [Software Dependencies](#Software-Dependencies)
-- [Project Data](#Project-Data)
-- [Documentation](#Documentation)
 - [Installation](#Installation)
+- [Datasets](#Datasets)
+- [Function Specifications](#Function-Specifications)
+- [Spread Battery Capacity over Different Number of Hours](#Spread-Battery-Capacity-over-Different-Number-of-Hours)
 - [Licensing](#Licensing)
 
 
-## Organization of the project
-
-The project has the following structure:
+## Project Organization
 
     direct_capstone2020/
       |- codes/
@@ -75,6 +74,16 @@ The project has the following structure:
 - Python 3
 - Use `environment.yml` to create an environment
 
+## Installation
+
+Below are the steps to install this package:
+1. Clone this repo to the computer: `git clone https://github.com/chengweilin114/direct_capstone2020`
+
+2. In the repo directory install and the environment:
+```
+conda env create -f environment
+conda activate environment
+```
 
 ## Datasets
 In this project, we use three datasets, the actual demand data in the last four years, i.e., `ieso_ga_master_dataset_allWeather_updated2020.csv`, the top 2 forecasts of peaks on each day, i.e., `ga_forecasts_top_2.cvs`, and the top 12 forecasts of peaks on each day, i.e., `ga_forecasts_top_12`. The shared link to the datasets is [link](https://drive.google.com/drive/folders/1ifAAAHJH6qRNGLICNbKe5Nt7yFHf-pTQ?usp=sharing).
@@ -159,7 +168,7 @@ report_df = get_report(actual_load, forecasts, n_probs_to_use)
 * Output
     * report_df: report on performance of different discharging strategies.
 
-## Spread battery capacity over different number of hours
+## Spread Battery Capacity over Different Number of Hours
 ### Step 1
 We choose the top n peaks (n days) in each season, and choose the hours with the largest k forecasted probabilities on each of these days.
 
@@ -225,16 +234,6 @@ This figures shows the performance changes as we increase n_probs_to_use for dif
 * When n_probs_to_use=2, we obtain the best performance for all values of n_peaks_to_use. 
 * As we continue increasing n_probs_to_use, we spread the battery capacity over more hours and the energy discharged in each hour can decrease. This explains why the performance degrades as we increase n_probs_to_use. However, for n_peaks_to_use>1, no matther how large n_probs_to_use is, discharging in proportional to probabilities always outperforms the benchmark strategy.
 
-## Installation
-
-Below are the steps to install this package:
-1. Clone this repo to the computer: `git clone https://github.com/chengweilin114/direct_capstone2020`
-
-2. In the repo directory install and the environment:
-```
-conda env create -f environment
-conda activate environment
-```
 
 ## Licensing
 
