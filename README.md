@@ -4,7 +4,6 @@
 <img align="right"  src="https://github.com/chengweilin114/direct_capstone2020/blob/master/images/battery.jpg">
 
 [![Build Status](https://travis-ci.org/chengweilin114/direct_capstone2020.svg?branch=master)](https://travis-ci.org/github/chengweilin114/direct_capstone2020)
-[![Coverage Status](https://coveralls.io/repos/github/chengweilin114/direct_capstone2020/badge.svg?branch=master)](https://coveralls.io/github/chengweilin114/direct_capstone2020?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![HitCount](http://hits.dwyl.com/chengwei0114/direct_capstone2020.svg)](http://hits.dwyl.com/chengwei0114/direct_capstone2020)
 
@@ -35,21 +34,39 @@ The project has the following structure:
                 |- small_master.csv
             |- test_data_functions.py
       |- codes/
-        |- Summarize_functions.ipynb
-        |- dataset.ipynb
-        |- results_for_performance.ipynb
-        |- step1_summary.ipynb
-        |- step2_summary.ipynb
-        |- step3_summary.ipynb
-        |- step4_summary.ipynb
+        |- adjust_probs.py
+        |- data_functions.py
+        |- dataloader.py
+        |- evaluate.py
+        |- summarize.py
       |- database/
-        |- data
+        |- small_forecast.csv
+        |- small_master.csv
       |- docs/
         |- Gantt Chart.png
         |- Project_proposal.pdf
         |- use_cases
       |- examples/
-        |- tutorial.ipynb
+        |- example.pdf
+        |- tutorial.py
+      |- images/
+        |- battery.jpg
+      |- results/
+        |- overall_report.csv
+        |- report_probs_to_use_1.csv
+        |- report_probs_to_use_2.csv
+        |- report_probs_to_use_3.csv
+        |- report_probs_to_use_4.csv
+        |- report_probs_to_use_5.csv
+        |- report_probs_to_use_6.csv
+        |- report_probs_to_use_7.csv
+        |- report_probs_to_use_8.csv
+        |- report_probs_to_use_9.csv
+        |- report_probs_to_use_10.csv
+        |- report_probs_to_use_11.csv
+        |- report_probs_to_use_12.csv
+      |- tests/
+         |- test_data_functions.py
       |- .gitignore
       |- .travis.yml
       |- LICENSE
