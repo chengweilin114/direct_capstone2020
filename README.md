@@ -66,17 +66,16 @@ The project has the following structure:
       |- README.md
       |- environment.yml     
 
-
-The main script is `Hedging-Saving/data_functions.py`. This file provides function that do the pre-processing from csv fils into dataframe. For a more specific overview of the project, please see `examples/tutorial.ipynb`.
-
-
 ## Software Dependencies
 
 - Python 3
 - Use `environment.yml` to create an environment
 
 
-## Project Data
+## Datasets
+In this project, we mainly use three datasets, the actual demand data in the last four years, the top 2 forecasts of peaks on each day, and the top 12 forecasts of peaks on each day. The shared link to the datasets is [link](https://drive.google.com/drive/folders/1ifAAAHJH6qRNGLICNbKe5Nt7yFHf-pTQ?usp=sharing)
+
+
 
 
 ## Documentation
