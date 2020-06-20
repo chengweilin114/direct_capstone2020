@@ -60,6 +60,10 @@ The project has the following structure:
         |- report_probs_to_use_12.csv
       |- tests/
          |- test_data_functions.py
+         |- test_dataloader.py
+         |- test_summarize.py
+         |- test_adjust_probs.py
+         |- test_evaluate.py
       |- .gitignore
       |- .travis.yml
       |- LICENSE
