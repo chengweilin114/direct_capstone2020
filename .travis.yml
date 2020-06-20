@@ -41,6 +41,7 @@ before_script:
 # the actual commands to run
 script:
     #- coverage run -m unittest
+    - pytest --cov=/codes
     - pytest --cov=/tests
  
 # generate a coverage report to send to back to user
