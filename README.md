@@ -75,14 +75,15 @@ The project has the following structure:
 ## Datasets
 In this project, we use three datasets, the actual demand data in the last four years, i.e., `ieso_ga_master_dataset_allWeather_updated2020.csv`, the top 2 forecasts of peaks on each day, i.e., `ga_forecasts_top_2.cvs`, and the top 12 forecasts of peaks on each day, i.e., `ga_forecasts_top_12`. The shared link to the datasets is [link](https://drive.google.com/drive/folders/1ifAAAHJH6qRNGLICNbKe5Nt7yFHf-pTQ?usp=sharing).
 
+In the `database` folder, users can find a sample of actual demand data and the forecasting results to play with.
 
 
-
-## Documentation
+## Function Specifications
+### Use the sample data from `database` folder
 
 `Hedging-Saving/data_functions.py`
 
-This module contain functions to retrieve and process data from the database folder. 
+This module contain functions to retrieve and process data from the `database` folder. 
 With all these functions, we can predict our peak hour more accurate. 
 
 ```
@@ -94,6 +95,9 @@ data_functions.Accuracy(master_df,forecast_df) 	    # input two csv files and ge
 Output:
 
 ![](images/top3_performance.png)
+
+### Use all the data from [link](https://drive.google.com/drive/folders/1ifAAAHJH6qRNGLICNbKe5Nt7yFHf-pTQ?usp=sharing)
+
 
 ## Installation
 
