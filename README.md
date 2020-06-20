@@ -157,15 +157,27 @@ report_df = get_report(actual_load, forecasts, n_probs_to_use)
 
 ## Spread battery capacity over different number of hours
 ### Step 1
-We choose the top $n$ peaks ($n$ days) in each season, and choose the hours with the largest $k$ forecasted probabilities on each of these days.
+We choose the top n peaks (n days) in each season, and choose the hours with the largest k forecasted probabilities on each of these days.
 ### Step 2
 We adjust the chosen probabilities to have them sum up to one for each day.
 ### Step 3
-We discharge the battery in proportional to the adjusted probabilities. Since the capacity of the battery is $2-$hours, the maximum amount that can be discharged is $0.5$. If the probability is $p\%$, we discharge $p\%$ of $0.5$ capacity. Then the discharged energy is $p\%$ of $0.5$.
+We discharge the battery in proportional to the adjusted probabilities. Since the capacity of the battery is 2-hours, the maximum amount that can be discharged is 0.5. If the probability is p%, we discharge p% of 0.5 capacity. Then the discharged energy is p% of 0.5.
 
-If one of the probabilitis on some day is larger than $0.5$, i.e., $p > 0.5$, we only discharge $50\%$ of $0.5$ capacity, and spread out the remaining capacity in the rest hours evenly. 
+If one of the probabilitis on some day is larger than 0.5, i.e., p > 0.5, we only discharge 50% of 0.5 capacity, and spread out the remaining capacity in the rest hours evenly. 
 
-For example, if we use the $3$ largest probabilities on each day, and the probabilities are $0.6, 0.1, 0.3$, then we discharge $0.5/0.5=100\%$, $0.25/0.5=50\%$, $0.25/0.5=50\%$ at each hour, repectively.
+For example, if we use the 3 largest probabilities on each day, and the probabilities are 0.6, 0.1, 0.3, then we discharge 0.5/0.5=100%, 0.25/0.5=50%, 0.25/0.5=50% at each hour, repectively.
+### Step 4
+We eavaluate the performance of this strategy by using the ratio of the total energy we successfully discharge and the total number of peaks we use. The more closer this ratio is to 100%, the better performance we have.
+### Example of top_n_results
+Table "season_results" shows the ground-truth **top 5 peaks** in the **season 2017-2018**, with **3 peaks at 17:00:00** and **2 peaks at 18:00:00**.
+
+-   **demand_MW**: demand in Megawatts for each hour
+-   **adjusted_demand_MW**: demand after adjusting in Megawatts for each hour
+-   **season**: year-based cycle, from last year's Mar. 31 to next year's Apr. 1
+-   **ts**: date-time
+-   **rankings_per_day**: rankings of adjusted demand in a day
+-   **rankings_per_season**: rankings of adjusted demand in a season
+-   **forecast**: forecasted probability of being the peak hour on that day
 
 ## Installation
 
