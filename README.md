@@ -18,6 +18,7 @@ Enel X has customers to participate in a special system peak program. By using b
 - [Installation](#Installation)
 - [Datasets](#Datasets)
 - [Function Specifications](#Function-Specifications)
+- [Demo](#Demo)
 - [Spread Battery Capacity over Different Number of Hours](#Spread-Battery-Capacity-over-Different-Number-of-Hours)
 - [Licensing](#Licensing)
 
@@ -40,7 +41,7 @@ Enel X has customers to participate in a special system peak program. By using b
         |- use_cases
       |- examples/
         |- example.pdf
-        |- tutorial.py
+        |- tutorial.ipynb
       |- images/
         |- battery.jpg
       |- results/
@@ -167,6 +168,14 @@ report_df = get_report(actual_load, forecasts, n_probs_to_use)
     * n_probs_to_use: user-specified number of top forecasting probabilities to use on each peak day.
 * Output
     * report_df: report on performance of different discharging strategies.
+    
+## Demo
+### Use the sample data from `database` folder and try to play with tutorial.ipynb from `examples` folder
+    direct_capstone2020/
+      |- codes/
+        |- data_functions.py
+      |- examples/
+        |- tutorial.ipynb
 
 ## Spread Battery Capacity over Different Number of Hours
 ### Step 1
